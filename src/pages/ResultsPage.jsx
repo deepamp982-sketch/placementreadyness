@@ -11,10 +11,23 @@ import {
     Zap
 } from 'lucide-react';
 
+import { getHistory } from '../utils/analysisEngine';
+
 const ResultsPage = () => {
     const { state } = useLocation();
     const navigate = useNavigate();
-    const analysis = state?.analysis;
+
+    // Use state analysis, or fallback to latest history item for refresh persistence
+    const [analysis, setAnalysis] = React.useState(state?.analysis || null);
+
+    React.useEffect(() => {
+        if (!analysis) {
+            const history = getHistory();
+            if (history.length > 0) {
+                setAnalysis(history[0]);
+            }
+        }
+    }, [analysis]);
 
     if (!analysis) {
         return (

@@ -168,7 +168,7 @@ export const analyzeJD = (company, role, jdText) => {
     questions = [...new Set(questions)].slice(0, 10);
 
     return {
-        id: crypto.randomUUID(),
+        id: (typeof crypto !== 'undefined' && crypto.randomUUID) ? crypto.randomUUID() : Math.random().toString(36).substring(2, 11),
         createdAt: new Date().toISOString(),
         company,
         role,
