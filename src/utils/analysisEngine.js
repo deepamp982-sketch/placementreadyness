@@ -82,15 +82,58 @@ export const analyzeJD = (company, role, jdText) => {
 
     // 3. Round-wise Preparation Checklist
     const checklist = [
-        { round: "Round 1: Aptitude / Basics", items: ["Aptitude & Logical Reasoning", "Quantitative Ability", "Verbal Ability", "Resume Overview", "Introduction Walkthrough"] },
-        { round: "Round 2: DSA + Core CS", items: ["Data Structures (Arrays, Strings, Linked Lists)", "Sorting & Searching Algorithms", "Core CS: OS Concepts", "Core CS: DBMS Concepts", "Basic Coding Practice (Easy-Medium)"] },
-        { round: "Round 3: Tech Interview (Projects + Stack)", items: ["Detailed Project Discussion", "Technical Trade-offs in Projects", "Real-world System Design", "Core Language Fundamentals"] },
-        { round: "Round 4: Managerial / HR", items: ["Behavioral Questions", "Conflict Resolution Scenarios", "Company Research & Culture Alignment", "Goal Alignment & Questions for Interviewer"] }
+        {
+            round: "Round 1: Aptitude / Basics",
+            items: [
+                "Aptitude & Logical Reasoning",
+                "Quantitative Ability (Quants)",
+                "Verbal Ability & Reading Comprehension",
+                "Resume Section-by-Section Overview",
+                "Self-Introduction (The 'Elevator Pitch')",
+                "LinkedIn Profile Optimization",
+                "Basic Mental Math Shortcuts"
+            ]
+        },
+        {
+            round: "Round 2: DSA + Core CS",
+            items: [
+                "Data Structures (Arrays, Strings, Linked Lists)",
+                "Searching & Sorting (Quick/Merge Sort)",
+                "OS: Process Management & Deadlocks",
+                "DBMS: Normalization & Query Optimization",
+                "Basic Coding (Easy-Medium LeetCode)",
+                "Computer Networks: OSI Model & TCP/UDP",
+                "OOPs: Inheritance & Polymorphism"
+            ]
+        },
+        {
+            round: "Round 3: Tech Interview (Projects + Stack)",
+            items: [
+                "Deep Dive: Most Significant Project",
+                "Technical Trade-offs & Architecture",
+                "Real-world System Design (Basic)",
+                "Core Language/Framework Fundamentals",
+                "Problem Solving Scenarios (STAR Method)",
+                "Git & Version Control Basics"
+            ]
+        },
+        {
+            round: "Round 4: Managerial / HR",
+            items: [
+                "Behavioral Questions (Company Values)",
+                "Handling Team Conflict Scenarios",
+                "Company Research (Mission & Culture)",
+                "Long-term Career Goal Alignment",
+                "Why this Company? Why this Role?",
+                "Question Prep for the Interviewer",
+                "Handling Salary/Relocation Queries"
+            ]
+        }
     ];
 
     // Adapt checklist based on skills
     if (allDetectedSkills.length > 0) {
-        checklist[2].items.push(...allDetectedSkills.slice(0, 3).map(s => `Deep Dive: ${s}`));
+        checklist[2].items.push(...allDetectedSkills.slice(0, 2).map(s => `Advanced Focus: ${s}`));
     }
 
     // 4. 7-day Plan

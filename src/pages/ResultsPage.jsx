@@ -82,14 +82,27 @@ const ResultsPage = () => {
                                 Key Skills Extracted
                             </CardTitle>
                         </CardHeader>
-                        <CardContent>
-                            <div className="flex flex-wrap gap-2">
-                                {analysis.allDetectedSkills.map((skill, i) => (
-                                    <span key={i} className="px-3 py-1.5 bg-indigo-50 text-primary border border-primary/10 rounded-lg text-sm font-bold">
-                                        {skill}
+                        <CardContent className="space-y-6">
+                            {Object.keys(analysis.extractedSkills).length === 0 ? (
+                                <div className="flex flex-wrap gap-2">
+                                    <span className="px-3 py-1.5 bg-indigo-50 text-primary border border-primary/10 rounded-lg text-sm font-bold">
+                                        General fresher stack
                                     </span>
-                                ))}
-                            </div>
+                                </div>
+                            ) : (
+                                Object.entries(analysis.extractedSkills).map(([category, skills]) => (
+                                    <div key={category} className="space-y-2">
+                                        <h4 className="text-xs font-black uppercase tracking-widest text-slate-400">{category}</h4>
+                                        <div className="flex flex-wrap gap-2">
+                                            {skills.map((skill, i) => (
+                                                <span key={i} className="px-3 py-1.5 bg-indigo-50 text-primary border border-primary/10 rounded-lg text-sm font-bold">
+                                                    {skill}
+                                                </span>
+                                            ))}
+                                        </div>
+                                    </div>
+                                ))
+                            )}
                         </CardContent>
                     </Card>
 
