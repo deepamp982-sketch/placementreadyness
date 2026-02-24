@@ -14,8 +14,8 @@ const AppShell = () => {
     const navItems = [
         { to: '/dashboard', label: 'Dashboard', icon: <LayoutDashboard size={20} /> },
         { to: '/practice', label: 'Practice', icon: <Code2 size={20} /> },
-        { to: '/assessments', label: 'Assessments', icon: <ClipboardCheck size={20} /> },
-        { to: '/resources', label: 'Resources', icon: <Library size={20} /> },
+        { to: '/assessments', label: 'Analyze JD', icon: <ClipboardCheck size={20} /> },
+        { to: '/history', label: 'History', icon: <Library size={20} /> },
         { to: '/profile', label: 'Profile', icon: <UserCircle size={20} /> },
     ];
 

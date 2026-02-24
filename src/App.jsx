@@ -5,10 +5,12 @@ import LandingPage from './pages/LandingPage';
 import {
   Dashboard,
   Practice,
-  Assessments,
   Resources,
   Profile
 } from './pages/Pages';
+import AnalyzePage from './pages/AnalyzePage';
+import HistoryPage from './pages/HistoryPage';
+import ResultsPage from './pages/ResultsPage';
 
 function App() {
   return (
@@ -21,7 +23,9 @@ function App() {
         <Route element={<AppShell />}>
           <Route path="/dashboard" element={<Dashboard />} />
           <Route path="/practice" element={<Practice />} />
-          <Route path="/assessments" element={<Assessments />} />
+          <Route path="/assessments" element={<AnalyzePage />} />
+          <Route path="/results" element={<ResultsPage />} />
+          <Route path="/history" element={<HistoryPage />} />
           <Route path="/resources" element={<Resources />} />
           <Route path="/profile" element={<Profile />} />
         </Route>
