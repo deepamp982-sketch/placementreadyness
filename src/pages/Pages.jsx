@@ -13,7 +13,8 @@ const PagePlaceholder = ({ title }) => (
     </div>
 );
 
-export const Dashboard = () => <PagePlaceholder title="Dashboard" />;
+// Dashboard is now in its own file
+export { default as Dashboard } from './Dashboard';
 export const Practice = () => <PagePlaceholder title="Practice" />;
 export const Assessments = () => <PagePlaceholder title="Assessments" />;
 export const Resources = () => <PagePlaceholder title="Resources" />;
